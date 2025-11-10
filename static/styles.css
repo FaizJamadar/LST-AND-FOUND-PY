@@ -1,0 +1,192 @@
+/* --- Google Font & Global Styles --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary-color: #3498db;
+    --success-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --warning-color: #f1c40f;
+    --light-gray-color: #bdc3c7;
+    --dark-gray-color: #7f8c8d;
+    --bg-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --container-bg: #ffffff;
+    --border-color: #dfe6e9;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+/* --- Main Layout Container --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--container-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+h1 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+/* --- Table Styling --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+thead th {
+    background-color: #f8f9fa;
+    color: var(--dark-gray-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #f5f7fa;
+}
+
+/* --- Universal Button Styles --- */
+.btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-add {
+    background: var(--primary-color);
+    display: block;
+    width: 120px;
+    text-align: center;
+    margin: 1rem auto 2rem;
+}
+
+.btn-edit { background-color: var(--light-gray-color); }
+.btn-claim { background-color: var(--success-color); }
+.btn-delete { background-color: var(--danger-color); }
+.btn-cancel {
+    background-color: transparent;
+    color: var(--dark-gray-color);
+    box-shadow: none;
+    border: 1px solid var(--border-color);
+}
+.btn-cancel:hover { background-color: #f5f7fa; transform: none; }
+
+.actions a.btn {
+    margin-right: 8px;
+}
+.actions a.btn:last-child {
+    margin-right: 0;
+}
+
+
+/* --- Status & Message Styling --- */
+.status-unclaimed, .status-claimed {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+}
+
+.status-unclaimed {
+    background-color: #fff8e1;
+    color: #f57f17;
+}
+
+.status-claimed {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.no-items {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fcfcfc;
+    border: 1px dashed var(--border-color);
+    color: var(--dark-gray-color);
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+/* --- Form Styling --- */
+.item-form {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.item-form label {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.item-form input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.item-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.form-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
