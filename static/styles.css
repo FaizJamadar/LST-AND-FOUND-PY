@@ -1,192 +1,194 @@
 /* --- Google Font & Global Styles --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-    --primary-color: #3498db;
-    --success-color: #2ecc71;
-    --danger-color: #e74c3c;
-    --warning-color: #f1c40f;
-    --light-gray-color: #bdc3c7;
-    --dark-gray-color: #7f8c8d;
-    --bg-color: #ecf0f1;
-    --text-color: #2c3e50;
-    --container-bg: #ffffff;
-    --border-color: #dfe6e9;
-    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --primary: #4361ee;       /* Modern Blue */
+    --success: #2ec4b6;       /* Teal Green */
+    --warning: #ff9f1c;       /* Warm Orange */
+    --danger: #ef476f;        /* Soft Red */
+    --dark: #2b2d42;
+    --light: #f8f9fa;
+    --gray: #8d99ae;
+    --bg: #edf2f4;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    padding: 2rem;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--dark);
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-/* --- Main Layout Container --- */
 .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    background: var(--container-bg);
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 1200px; /* Wider container for better spacing */
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 h1 {
     text-align: center;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 10px;
+    font-size: 2.5rem;
 }
 
-/* --- Table Styling --- */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2rem;
-}
-
-thead th {
-    background-color: #f8f9fa;
-    color: var(--dark-gray-color);
-    font-weight: 500;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-th, td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-    vertical-align: middle;
-}
-
-tbody tr {
-    transition: background-color 0.2s ease;
-}
-
-tbody tr:last-child td {
-    border-bottom: none;
-}
-
-tbody tr:hover {
-    background-color: #f5f7fa;
-}
-
-/* --- Universal Button Styles --- */
-.btn {
-    padding: 10px 18px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-block;
-    color: white;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+/* --- Modern Add Button --- */
+.header-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
 }
 
 .btn-add {
-    background: var(--primary-color);
-    display: block;
-    width: 120px;
-    text-align: center;
-    margin: 1rem auto 2rem;
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 50px; /* Pill shape */
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    transition: transform 0.2s ease;
 }
 
-.btn-edit { background-color: var(--light-gray-color); }
-.btn-claim { background-color: var(--success-color); }
-.btn-delete { background-color: var(--danger-color); }
-.btn-cancel {
-    background-color: transparent;
-    color: var(--dark-gray-color);
-    box-shadow: none;
-    border: 1px solid var(--border-color);
-}
-.btn-cancel:hover { background-color: #f5f7fa; transform: none; }
-
-.actions a.btn {
-    margin-right: 8px;
-}
-.actions a.btn:last-child {
-    margin-right: 0;
+.btn-add:hover {
+    transform: translateY(-2px);
 }
 
+/* --- Clean Table Design --- */
+table {
+    width: 100%;
+    border-collapse: separate; /* Allows for border-radius on rows */
+    border-spacing: 0 10px;    /* Space between rows */
+    margin-top: 10px;
+}
 
-/* --- Status & Message Styling --- */
-.status-unclaimed, .status-claimed {
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 0.8rem;
+thead th {
+    text-align: left;
+    padding: 15px 20px;
+    color: var(--gray);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #e9ecef;
+}
+
+tbody tr {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+tbody tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    z-index: 1;
+    position: relative;
+}
+
+td {
+    padding: 20px;
+    vertical-align: middle;
+    color: var(--dark);
+    font-size: 0.95rem;
+    border-top: 1px solid #f1f3f5;
+    border-bottom: 1px solid #f1f3f5;
+}
+
+/* Rounds the corners of the rows */
+td:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-left: 1px solid #f1f3f5; }
+td:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-right: 1px solid #f1f3f5; }
+
+/* --- The "Actions" Column Fix --- */
+.actions {
+    display: flex;
+    gap: 8px; /* Space between buttons */
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap; /* Prevents buttons from stacking */
+}
+
+/* --- Ergonomic Buttons --- */
+.btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
     font-weight: 500;
-    display: inline-block;
-    text-align: center;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.btn-edit {
+    background-color: #edf2f4;
+    color: var(--dark);
+    border: 1px solid #dee2e6;
+}
+.btn-edit:hover { background-color: #e9ecef; border-color: #ced4da; }
+
+.btn-claim {
+    background-color: rgba(46, 196, 182, 0.1);
+    color: var(--success);
+    border: 1px solid transparent;
+}
+.btn-claim:hover { background-color: var(--success); color: white; }
+
+.btn-delete {
+    background-color: rgba(239, 71, 111, 0.1);
+    color: var(--danger);
+    border: 1px solid transparent;
+}
+.btn-delete:hover { background-color: var(--danger); color: white; }
+
+/* --- Status Badges --- */
 .status-unclaimed {
-    background-color: #fff8e1;
-    color: #f57f17;
+    background-color: #fff4e6;
+    color: var(--warning);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 .status-claimed {
-    background-color: #e8f5e9;
-    color: #2e7d32;
+    background-color: #e6fcf5;
+    color: var(--success);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
-.no-items {
-    text-align: center;
-    padding: 2rem;
-    background-color: #fcfcfc;
-    border: 1px dashed var(--border-color);
-    color: var(--dark-gray-color);
-    border-radius: 8px;
-    margin-top: 2rem;
-}
-
-/* --- Form Styling --- */
+/* --- Form Styling (Kept clean) --- */
 .item-form {
     display: grid;
-    gap: 1.2rem;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
 }
-
-.item-form label {
-    font-weight: 500;
-    font-size: 0.9rem;
-}
-
+.item-form label { font-weight: 600; font-size: 0.9rem; color: var(--dark); }
 .item-form input {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
+    border: 2px solid #edf2f4;
+    border-radius: 10px;
     font-size: 1rem;
-    border-radius: 6px;
-    border: 1px solid var(--border-color);
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s;
 }
-
-.item-form input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-}
-
-.form-actions {
-    margin-top: 1rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: flex-end;
-}
+.item-form input:focus { outline: none; border-color: var(--primary); }
+.form-actions { display: flex; gap: 15px; margin-top: 10px; }
+.btn-cancel { background-color: transparent; color: var(--gray); padding: 12px 20px; }
+.btn-cancel:hover { color: var(--dark); }
