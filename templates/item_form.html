@@ -6,28 +6,43 @@
     <title>{{ action }} Item</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-<body>
+<body class="dashboard-staff">
     <div class="container">
-        <h1>{{ action }} Item</h1>
-        
-        <form method="POST" class="item-form">
-            <label for="name">Item Name</label>
-            <input type="text" id="name" name="name" value="{{ item.name if item else '' }}" required>
-            
-            <label for="description">Description</label>
-            <input type="text" id="description" name="description" value="{{ item.description if item else '' }}" required>
-            
-            <label for="location">Location Found</label>
-            <input type="text" id="location" name="location" value="{{ item.location if item else '' }}" required>
-            
-            <label for="date_found">Date Found</label>
-            <input type="date" id="date_found" name="date_found" value="{{ item.date_found.strftime('%Y-%m-%d') if item else '' }}" required>
-            
-            <div class="form-actions">
-                <button type="submit" class="btn btn-add">Save Item</button>
-                <a href="{{ url_for('index') }}" class="btn btn-cancel">Cancel</a>
+        <div class="card" style="max-width: 700px; margin: 50px auto;">
+            <div class="card-header">
+                <h2>
+                    <span class="card-icon staff-card-icon">{% if action == 'Add' %}➕{% else %}✏️{% endif %}</span>
+                    {{ action }} Item
+                </h2>
             </div>
-        </form>
+            
+            <form method="POST" class="item-form">
+                <div>
+                    <label for="name">📍 Item Name</label>
+                    <input type="text" id="name" name="name" value="{{ item.name if item else '' }}" placeholder="e.g., Blue Backpack" required>
+                </div>
+                
+                <div>
+                    <label for="description">📝 Description</label>
+                    <input type="text" id="description" name="description" value="{{ item.description if item else '' }}" placeholder="e.g., Contains textbooks and laptop" required>
+                </div>
+                
+                <div>
+                    <label for="location">🏛️ Location Found</label>
+                    <input type="text" id="location" name="location" value="{{ item.location if item else '' }}" placeholder="e.g., Library 2nd Floor" required>
+                </div>
+                
+                <div>
+                    <label for="date_found">📅 Date Found</label>
+                    <input type="date" id="date_found" name="date_found" value="{{ item.date_found.strftime('%Y-%m-%d') if item else '' }}" required>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-staff-primary" style="flex: 1;">✔️ Save Item</button>
+                    <a href="{{ url_for('staff_dashboard') }}" class="btn btn-cancel" style="flex: 1;">❌ Cancel</a>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>

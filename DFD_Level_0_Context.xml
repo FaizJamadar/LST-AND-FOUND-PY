@@ -1,0 +1,125 @@
+<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="5.0" version="22.0.0" etag="xxx" type="device">
+  <diagram name="Level 0 DFD - Context Diagram" id="context">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title" value="Level 0 DFD - Context Diagram&#xa;Lost and Found Management System" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="384.5" y="40" width="400" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Central Process -->
+        <mxCell id="process0" value="0&#xa;&#xa;Lost and Found&#xa;Management&#xa;System" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="484.5" y="300" width="200" height="200" as="geometry" />
+        </mxCell>
+        
+        <!-- External Entity: Staff -->
+        <mxCell id="staff" value="Staff" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="120" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- External Entity: Student -->
+        <mxCell id="student" value="Student" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="120" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- External Entity: Database -->
+        <mxCell id="database" value="Database" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="929" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Data Flows from Staff -->
+        <mxCell id="flow1" value="Login Credentials" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fontSize=11;" edge="1" parent="1" source="staff" target="process0">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="450" as="sourcePoint" />
+            <mxPoint x="570" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="flow2" value="Item Details" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.35;entryDx=0;entryDy=0;fontSize=11;entryPerimeter=0;" edge="1" parent="1" source="staff" target="process0">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="450" as="sourcePoint" />
+            <mxPoint x="570" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="flow3" value="Claim Approval/Rejection" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.05;entryY=0.65;entryDx=0;entryDy=0;fontSize=11;entryPerimeter=0;" edge="1" parent="1" source="staff" target="process0">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="450" as="sourcePoint" />
+            <mxPoint x="570" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Data Flows to Staff -->
+        <mxCell id="flow4" value="Item List &amp; Reports" style="endArrow=classic;html=1;rounded=0;exitX=0.05;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;fontSize=11;exitPerimeter=0;" edge="1" parent="1" source="process0" target="staff">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="450" as="sourcePoint" />
+            <mxPoint x="570" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="flow5" value="Claim Requests" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;" edge="1" parent="1" source="process0" target="staff">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="450" as="sourcePoint" />
+            <mxPoint x="570" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Data Flows from Student -->
+        <mxCell id="flow6" value="Login Credentials" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fontSize=11;" edge="1" parent="1" source="student" target="process0">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="450" as="sourcePoint" />
+            <mxPoint x="570" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="flow7" value="Search Query" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.05;entryY=0.85;entryDx=0;entryDy=0;fontSize=11;entryPerimeter=0;" edge="1" parent="1" source="student" target="process0">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="450" as="sourcePoint" />
+            <mxPoint x="570" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="flow8" value="Claim Request" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;fontSize=11;" edge="1" parent="1" source="student" target="process0">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="450" as="sourcePoint" />
+            <mxPoint x="570" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Data Flows to Student -->
+        <mxCell id="flow9" value="Available Items" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.85;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;fontSize=11;exitPerimeter=0;" edge="1" parent="1" source="process0" target="student">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="450" as="sourcePoint" />
+            <mxPoint x="570" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="flow10" value="Claim Status" style="endArrow=classic;html=1;rounded=0;exitX=0.05;exitY=0.95;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;exitPerimeter=0;" edge="1" parent="1" source="process0" target="student">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="450" as="sourcePoint" />
+            <mxPoint x="570" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Data Flows to/from Database -->
+        <mxCell id="flow11" value="Store Data" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.35;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fontSize=11;exitPerimeter=0;" edge="1" parent="1" source="process0" target="database">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="450" as="sourcePoint" />
+            <mxPoint x="570" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="flow12" value="Retrieve Data" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.65;entryDx=0;entryDy=0;fontSize=11;entryPerimeter=0;" edge="1" parent="1" source="database" target="process0">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="450" as="sourcePoint" />
+            <mxPoint x="570" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

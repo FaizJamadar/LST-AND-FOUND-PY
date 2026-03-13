@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="dashboard-student">
+    <div class="container">
+        <div class="dashboard-header">
+            <div class="dashboard-header-left">
+                <div class="dashboard-avatar student-avatar"></div>
+                <div class="dashboard-title">
+                    <h1>Student Dashboard</h1>
+                    <p class="dashboard-subtitle">Welcome back, {{ session.username }}!</p>
+                </div>
+            </div>
+            <a href="{{ url_for('logout') }}" class="btn btn-logout">🚪 Logout</a>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2>
+                    <span class="card-icon student-card-icon">🔍</span>
+                    Available Items
+                </h2>
+            </div>
+            
+            {% if items %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Description</th>
+                        <th>Location Found</th>
+                        <th>Date Found</th>
+                        <th>Claim Item</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>📍 {{ item.name }}</td>
+                        <td>{{ item.description }}</td>
+                        <td>🏛️ {{ item.location }}</td>
+                        <td>📅 {{ item.date_found.strftime('%Y-%m-%d') }}</td>
+                        <td>
+                            <form method="POST" action="{{ url_for('claim_item', id=item.id) }}" class="claim-form-inline">
+                                <input type="text" name="contact_info" placeholder="Your contact info" required>
+                                <button type="submit" class="btn btn-student-primary">✅ Claim</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="empty-state">
+                <div class="empty-state-icon">🔍</div>
+                <h3>No items available</h3>
+                <p>Check back later for lost items</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2>
+                    <span class="card-icon student-card-icon">📋</span>
+                    My Claims
+                </h2>
+            </div>
+            
+            {% if my_claims %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Description</th>
+                        <th>Claim Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for claim, item in my_claims %}
+                    <tr>
+                        <td>📍 {{ item.name }}</td>
+                        <td>{{ item.description }}</td>
+                        <td>📅 {{ claim.claim_date.strftime('%Y-%m-%d') }}</td>
+                        <td><span class="status-{{ claim.status.lower() }}">{{ claim.status }}</span></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="empty-state">
+                <div class="empty-state-icon">📋</div>
+                <h3>No claims yet</h3>
+                <p>Claim items from the available list above</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

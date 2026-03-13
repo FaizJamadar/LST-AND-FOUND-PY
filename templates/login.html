@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Lost and Found</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-icon">🔐</div>
+            <h1>Lost & Found Portal</h1>
+            <p class="login-subtitle">Secure Access for Staff & Students</p>
+            
+            <form method="POST" class="item-form">
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-staff-primary" style="width: 100%; padding: 15px;">Login</button>
+            </form>
+            
+            <div class="demo-creds">
+                <p style="text-align: center; font-weight: 600; margin-bottom: 15px;">Demo Credentials</p>
+                <div class="cred-item">
+                    <span class="cred-role">👨‍💼 Staff</span>
+                    <span class="cred-details">staff / staff123</span>
+                </div>
+                <div class="cred-item">
+                    <span class="cred-role">👨‍🎓 Student</span>
+                    <span class="cred-details">student / student123</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
